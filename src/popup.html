@@ -5,32 +5,30 @@
         <title>Popup</title>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/lumen/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
         <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/popup.js"> </script>
         <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
     </head>
     <body>
         <div id="popup" class="container">
             <header>
-                <button id="" class="btn btn-warning">
-                    <span class="glyphicon glyphicon-eye-close">&nbsp;</span>
-                    <span class="text">Reset</span>
+                <button id="btn-export" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Export">
+                    <span class="glyphicon glyphicon-save"/>
                 </button>
-                <button id="" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-remove">&nbsp;</span>
-                    <span class="text">Export</span>
+                <button id="btn-import" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Import">
+                    <span class="glyphicon glyphicon-open"/>
                 </button>
-                <button id="" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-remove">&nbsp;</span>
-                    <span class="text">Import</span>
+                <button id="btn-options" class="btn" data-toggle="tooltip" data-placement="bottom" title="Options">
+                    <span class="glyphicon glyphicon-th-list"/>
                 </button>
-                <button id="" class="btn btn-alert">
-                    <span class="glyphicon glyphicon-th-list">&nbsp;</span>
-                    <span class="text">Options</span>
+                <button id="btn-reset" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Reset">
+                    <span class="glyphicon glyphicon-trash"/>
                 </button>
             </header>
             <a href="#"></a> <!-- To get the focus -->
             <div class="alert alert-warning message error">&nbsp;</div>
             <div id="content">
+                <button class="btn btn-large" id="btn-update">Update</button>
             </div>
         </div>
     </body>

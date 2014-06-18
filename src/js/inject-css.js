@@ -1,8 +1,3 @@
-function loadStyles(cb) {
-    chrome.storage.local.get({'styles':{}}, function(storedConfig) {
-        cb(storedConfig.styles);
-    });
-}
 
 function injectStyles(styles) {
     var INJECTED_ID = 'iplayer-custom-style';
@@ -27,4 +22,12 @@ function injectStyles(styles) {
     style.innerHTML = css;
 }
 
-loadStyles(injectStyles);
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.action === 'updateStyles') {
+        injectStyles(request.data);
+    }
+    sendResponse(true);
+  }
+);
+
