@@ -6,8 +6,13 @@ function loadStyles(cb) {
 }
 
 
+var getUiConfig = function () {
+    return {
+        'foreColour': $('#value-text-colour').val(),
+        'colour': $('#value-bg-colour').val()
+    };
+};
 
-//window.embeddedMedia.players[0].updateUiConfig({colour: '#FF0000', 'foreColour': '#00ffff'})
 
 var styleMapping = [
     {
@@ -83,7 +88,7 @@ function loadStoredValues(cb) {
     });
 }
 
-function saveStyles() {
+function getStyles() {
     var styles = {}, i;
     for (i in styleMapping) {
         var style = styleMapping[i], value;
@@ -95,7 +100,16 @@ function saveStyles() {
         styles[style.selector] = style.property + ': ' + value;
     }
     console.log(styles);
-    chrome.storage.local.set({'styles': styles});
+    return styles;
+}
+
+function saveStyles() {
+    chrome.storage.local.set(
+        {
+            'styles': getStyles(),
+            'playerUiConfig': getUiConfig()
+        }
+    );
 }
 
 function resetStyles() {
@@ -134,6 +148,14 @@ $(function () {
         saveStyles();
     };
     $('input[type=range]').on('change', updateRange).each(updateRange);
+
+    $('#btn-export').click(function () {
+        $('#export .content').text(JSON.stringify(getStyles()));
+        $('#export').show();
+    });
+    $('#export .close').click(function () {
+        $('#export').hide();
+    });
 
     $('#btn-reset').click(function () {
         resetStyles();

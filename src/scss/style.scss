@@ -62,6 +62,22 @@ fieldset {
         padding-left: 25px;
     }
 
+    #export {
+        display: none;
+        position: fixed;
+        top: 10px;
+        height: 90%;
+        width: 100%;
+        padding: 10px;
+        left: 0%;
+        z-index: 9999;
+        background: white;
+        border: 1px solid grey;
+        .content {
+            padding: 1em;
+        }
+    }
+
     label {
         margin-top: 1em;
     }

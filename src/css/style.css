@@ -69,10 +69,27 @@ fieldset {
   padding-left: 25px;
 }
 /* line 65, ../scss/style.scss */
+#popup #export {
+  display: none;
+  position: fixed;
+  top: 10px;
+  height: 90%;
+  width: 100%;
+  padding: 10px;
+  left: 0%;
+  z-index: 9999;
+  background: white;
+  border: 1px solid grey;
+}
+/* line 76, ../scss/style.scss */
+#popup #export .content {
+  padding: 1em;
+}
+/* line 81, ../scss/style.scss */
 #popup label {
   margin-top: 1em;
 }
-/* line 69, ../scss/style.scss */
+/* line 85, ../scss/style.scss */
 #popup .colour-block .colour-watch {
   width: 20px;
   height: 20px;
@@ -80,59 +97,59 @@ fieldset {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   margin-top: 6px;
 }
-/* line 79, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
 #popup .range input {
   width: 70%;
   float: left;
 }
-/* line 80, ../scss/style.scss */
+/* line 96, ../scss/style.scss */
 #popup .range span {
   font-size: 16px;
   padding: 8px;
 }
-/* line 87, ../scss/style.scss */
+/* line 103, ../scss/style.scss */
 #popup .dropzone {
   border: 2px dashed #555;
   width: 100%;
   border-radius: 10px;
 }
-/* line 92, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
 #popup .dropzone span {
   text-align: center;
   margin: 20px auto;
   font-size: 18px;
 }
-/* line 97, ../scss/style.scss */
+/* line 113, ../scss/style.scss */
 #popup .dropzone .normal {
   display: block;
 }
-/* line 100, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 #popup .dropzone .hover {
   font-weight: bold;
   display: none;
 }
-/* line 105, ../scss/style.scss */
+/* line 121, ../scss/style.scss */
 #popup .dropzone.dropping {
   background: #ccc;
 }
-/* line 107, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 #popup .dropzone.dropping .normal {
   display: none;
 }
-/* line 110, ../scss/style.scss */
+/* line 126, ../scss/style.scss */
 #popup .dropzone.dropping .hover {
   display: block;
   -webkit-animation: rotating .5s linear infinite;
 }
-/* line 117, ../scss/style.scss */
+/* line 133, ../scss/style.scss */
 #popup .message {
   margin-top: 3em;
 }
-/* line 121, ../scss/style.scss */
+/* line 137, ../scss/style.scss */
 #popup #content {
   margin-top: 2.5em;
 }
-/* line 125, ../scss/style.scss */
+/* line 141, ../scss/style.scss */
 #popup header {
   position: fixed;
   top: 0px;
@@ -143,17 +160,17 @@ fieldset {
   text-align: center;
   padding: 4px 0 4px 0;
 }
-/* line 137, ../scss/style.scss */
+/* line 153, ../scss/style.scss */
 #popup table th {
   background: #444;
   color: #ccc;
 }
-/* line 141, ../scss/style.scss */
+/* line 157, ../scss/style.scss */
 #popup table td, #popup table th {
   border: 1px solid #999;
   padding: 4px;
 }
-/* line 145, ../scss/style.scss */
+/* line 161, ../scss/style.scss */
 #popup table tr.request-header td {
   background: #444;
   color: #ccc;

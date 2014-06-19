@@ -31,10 +31,24 @@ chrome.runtime.onMessage.addListener(
   }
 );
 
+var uiConfig = false;
+
+setInterval(function () {
+    if (uiConfig) {
+        var newScript = document.createElement('script');
+        newScript.innerHTML = 
+            'window.embeddedMedia.players[0].updateUiConfig(' +
+            JSON.stringify(uiConfig) +
+            ');';
+        document.body.appendChild(newScript);
+    }
+}, 1000);
+
 function loadStyles() {
-    chrome.storage.local.get({'styles':{}}, function (data) {
-        console.log(data.styles);
+    chrome.storage.local.get({'styles':{}, 'playerUiConfig': {}}, function (data) {
+        console.log(data);
         injectStyles(data.styles);
+        uiConfig = data.playerUiConfig;
     });
 }
 
