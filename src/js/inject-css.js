@@ -25,7 +25,7 @@ function injectStyles(styles) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.action === 'updateStyles') {
-        injectStyles(request.data);
+        loadStyles();
     }
     sendResponse(true);
   }

@@ -5,7 +5,7 @@ function openPopup() {
         'top': 0,
         'left': 0,
         'width': 330,
-        'height': 480,
+        'height': 580,
         //'type': 'detached_panel'
         'type': 'popup'
     }, function (popupWindow) {
@@ -18,6 +18,11 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         chrome.windows.get(popupId, {}, function (theWindow) {
             if (!theWindow) {
                 openPopup();
+            }else{
+                //bring the window to the top
+                chrome.windows.update(popupId, {
+                    focused: true
+                });
             }
         });
     }else{

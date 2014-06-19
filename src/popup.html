@@ -21,9 +21,6 @@
                 <button id="btn-import" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Import">
                     <span class="glyphicon glyphicon-open"/>
                 </button>
-                <button id="btn-options" class="btn" data-toggle="tooltip" data-placement="bottom" title="Options">
-                    <span class="glyphicon glyphicon-th-list"/>
-                </button>
                 <button id="btn-reset" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="reset">
                     <span class="glyphicon glyphicon-trash"/>
                 </button>
@@ -38,10 +35,6 @@
                         <input id="value-bg-colour" type="text" value="" class="form-control" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
-                    <label>Background image</label>
-                    <div id="value-bg-image" class="dropzone">
-                        Drop file here
-                    </div>
                     <label>Text colour</label>
                     <div class="colorpicker">
                         <input id="value-text-colour" type="text" value="" class="form-control" />
@@ -52,10 +45,26 @@
                         <input id="value-text-secondary-colour" type="text" value="" class="form-control" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
+                    <label>Lines colour</label>
+                    <div class="colorpicker">
+                        <input id="value-lines-colour" type="text" value="" class="form-control" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                    <label>Description font size</label>
+                    <div class="range">
+                        <input id="value-font-size" rel="output-font-size" type="range" step="0" min="8" max="24">
+                        <span class="output" id="output-font-size"></span>
+                    </div>
+                    <label>Background image</label>
+                    <div id="value-bg-image" class="dropzone">
+                        <span class="normal">Drag file here</span>
+                        <span class="hover">Drop it!</span>
+                    </div>
+                    <br/>
+                    <button class="btn btn-danger" id="value-bg-image-reset">Reset</button><br/>
                 </div>
 
             </div>
-            <button class="btn btn-large" id="btn-update">Update</button>
         </div>
     </body>
 </html>
