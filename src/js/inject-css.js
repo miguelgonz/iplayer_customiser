@@ -31,10 +31,18 @@ chrome.runtime.onMessage.addListener(
   }
 );
 
+function loadStyles() {
+    chrome.storage.local.get({'styles':{}}, function (data) {
+        console.log(data.styles);
+        injectStyles(data.styles);
+    });
+}
+
 chrome.storage.onChanged.addListener(function(changes, namespace) {
     //Only listen to style changes
-    if (typeof changes.styles === "undefined") {
-        return;
+    if (typeof changes.styles !== "undefined") {
+        loadStyles();
     }
-    injectStyles(changes.styles.newValue);
 });
+
+loadStyles();

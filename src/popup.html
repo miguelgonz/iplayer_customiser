@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title>Popup</title>
+        <title>iPlayer customiser</title>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/lumen/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
         <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.filedrop.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap-colorpicker.min.js"> </script>
         <script src="js/popup.js"> </script>
@@ -37,15 +38,24 @@
                         <input id="value-bg-colour" type="text" value="" class="form-control" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
+                    <label>Background image</label>
+                    <div id="value-bg-image" class="dropzone">
+                        Drop file here
+                    </div>
                     <label>Text colour</label>
                     <div class="colorpicker">
                         <input id="value-text-colour" type="text" value="" class="form-control" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
+                    <label>Secondary text colour</label>
+                    <div class="colorpicker">
+                        <input id="value-text-secondary-colour" type="text" value="" class="form-control" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
                 </div>
 
-                <button class="btn btn-large" id="btn-update">Update</button>
             </div>
+            <button class="btn btn-large" id="btn-update">Update</button>
         </div>
     </body>
 </html>

@@ -35,10 +35,14 @@ fieldset {
 /* line 35, ../scss/style.scss */
 #popup {
   margin-top: 0.5em;
-  height: 400px;
   min-width: 320px;
 }
-/* line 41, ../scss/style.scss */
+/* line 37, ../scss/style.scss */
+#popup #content {
+  height: 400px;
+  overflow: auto;
+}
+/* line 44, ../scss/style.scss */
 #popup .colour-block .colour-watch {
   width: 20px;
   height: 20px;
@@ -46,15 +50,21 @@ fieldset {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   margin-top: 6px;
 }
-/* line 51, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
+#popup .dropzone {
+  border: 2px dashed #555;
+  width: 100%;
+  height: 50px;
+}
+/* line 60, ../scss/style.scss */
 #popup .message {
   margin-top: 3em;
 }
-/* line 55, ../scss/style.scss */
+/* line 64, ../scss/style.scss */
 #popup #content {
   margin-top: 2.5em;
 }
-/* line 59, ../scss/style.scss */
+/* line 68, ../scss/style.scss */
 #popup header {
   position: fixed;
   top: 0px;
@@ -65,17 +75,17 @@ fieldset {
   text-align: center;
   padding: 4px 0 4px 0;
 }
-/* line 71, ../scss/style.scss */
+/* line 80, ../scss/style.scss */
 #popup table th {
   background: #444;
   color: #ccc;
 }
-/* line 75, ../scss/style.scss */
+/* line 84, ../scss/style.scss */
 #popup table td, #popup table th {
   border: 1px solid #999;
   padding: 4px;
 }
-/* line 79, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 #popup table tr.request-header td {
   background: #444;
   color: #ccc;
