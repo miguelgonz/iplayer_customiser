@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/lumen/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-colorpicker.min.js"> </script>
         <script src="js/popup.js"> </script>
+        <link rel="stylesheet" href="/css/bootstrap-colorpicker.min.css" type="text/css" media="screen" charset="utf-8">
         <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
     </head>
     <body>
@@ -21,13 +23,27 @@
                 <button id="btn-options" class="btn" data-toggle="tooltip" data-placement="bottom" title="Options">
                     <span class="glyphicon glyphicon-th-list"/>
                 </button>
-                <button id="btn-reset" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Reset">
+                <button id="btn-reset" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="reset">
                     <span class="glyphicon glyphicon-trash"/>
                 </button>
             </header>
             <a href="#"></a> <!-- To get the focus -->
             <div class="alert alert-warning message error">&nbsp;</div>
             <div id="content">
+
+                <div class="colour-block">
+                    <label>Background colour</label>
+                    <div class="colorpicker">
+                        <input id="value-bg-colour" type="text" value="" class="form-control" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                    <label>Text colour</label>
+                    <div class="colorpicker">
+                        <input id="value-text-colour" type="text" value="" class="form-control" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                </div>
+
                 <button class="btn btn-large" id="btn-update">Update</button>
             </div>
         </div>

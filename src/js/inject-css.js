@@ -31,3 +31,10 @@ chrome.runtime.onMessage.addListener(
   }
 );
 
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+    //Only listen to style changes
+    if (typeof changes.styles === "undefined") {
+        return;
+    }
+    injectStyles(changes.styles.newValue);
+});

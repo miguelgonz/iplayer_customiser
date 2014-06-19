@@ -33,23 +33,18 @@ fieldset {
 }
 
 /* line 35, ../scss/style.scss */
-table.request {
-  margin: 1em 0;
-}
-/* line 38, ../scss/style.scss */
-table.request.downlighted {
-  color: #555;
-  opacity: 0.6;
-}
-/* line 43, ../scss/style.scss */
-table.request.highlighted {
-  color: #600;
-}
-
-/* line 48, ../scss/style.scss */
 #popup {
   margin-top: 0.5em;
+  height: 400px;
   min-width: 320px;
+}
+/* line 41, ../scss/style.scss */
+#popup .colour-block .colour-watch {
+  width: 20px;
+  height: 20px;
+  float: right;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 6px;
 }
 /* line 51, ../scss/style.scss */
 #popup .message {
@@ -70,30 +65,18 @@ table.request.highlighted {
   text-align: center;
   padding: 4px 0 4px 0;
 }
-/* line 72, ../scss/style.scss */
+/* line 71, ../scss/style.scss */
 #popup table th {
   background: #444;
   color: #ccc;
 }
-/* line 76, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 #popup table td, #popup table th {
   border: 1px solid #999;
   padding: 4px;
 }
-/* line 80, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 #popup table tr.request-header td {
   background: #444;
   color: #ccc;
-}
-
-/* line 89, ../scss/style.scss */
-#tips ul {
-  list-style: none;
-}
-/* line 92, ../scss/style.scss */
-#tips li {
-  display: inline-table;
-  border-right: 1px solid;
-  margin-right: 8px;
-  padding-right: 8px;
 }

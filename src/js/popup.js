@@ -1,19 +1,30 @@
-var bg = chrome.extension.getBackgroundPage(), styles;
-
-function loadStyles() {
-    chrome.storage.local.get({'styles':{}}, function(storedConfig) {
-        styles = storedConfig.styles;
-    });
-}
-
-function randomColour () {
-    return "#" + Math.random().toString(16).substr(2,6);
-}
 
 function loadStyles(cb) {
     chrome.storage.local.get({'styles':{}}, function(storedConfig) {
         cb(storedConfig.styles);
     });
+}
+
+var styleMapping = [
+    {
+        selector: '.tools-section .link .item',
+        dom: '#value-text-colour',
+        property: 'background'
+    },
+    {
+        selector: '.s-b .s-b-button, .s-b.iplayer span, #data .link, .availability-component, #synopsis p.medium-description',
+        dom: '#value-text-colour',
+        property: 'color'
+    },
+    {
+        select: '.main',
+        dom: '#value-bg-colour',
+        property: 'background'
+    }
+];
+
+function getValues() {
+
 }
 
 function flashMessage(msg) {
@@ -25,28 +36,15 @@ function flashMessage(msg) {
 
 $(function () {
     $('.message').hide();
+    $('.colorpicker').colorpicker();
 
     $('#btn-update').click(function () {
-        var styles = {
-            'body':'background:'+randomColour(),
-            '#synopsis p.medium-description': {
-                'font-size': '20px',
-            'color': randomColour(),
-            }
-        };
+        var styles = {}, i;
+        for (i in styleMapping) {
+            var style = styleMapping[i];
+            styles[style.selector] = style.property + ': ' +$(style.dom).val();
+        }
+        console.log(styles);
         chrome.storage.local.set({'styles': styles});
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            chrome.tabs.sendMessage(tabs[0].id,
-                {
-                    'action': 'updateStyles',
-                    'data': styles
-                },
-                function (success) {
-                    if (success) {
-                        flashMessage('styles updated');
-                    }
-                }
-            );
-        });
     });
 });
