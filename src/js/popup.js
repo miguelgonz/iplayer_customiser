@@ -14,55 +14,6 @@ var getUiConfig = function () {
 };
 
 
-var styleMapping = [
-    {
-        selector: '.tools-section .link .item',
-        dom: '#value-text-secondary-colour',
-        property: 'background'
-    },
-    {
-        selector: '.availability-component, #synopsis p.medium-description, .carousel h2, .carousel .title, .carousel .subtitle, #title h2',
-        dom: '#value-text-colour',
-        property: 'color'
-    },
-    {
-        selector: '.s-b .s-b-button, .s-b.iplayer span, #data .link, .carousel .subtitle, #title h2 span',
-        dom: '#value-text-secondary-colour',
-        property: 'color'
-    },
-    {
-        selector: '.discovery-container, .iplayer-gradient-front, .iplayer-gradient,.main',
-        dom: '#value-bg-colour',
-        property: 'background-color'
-    },
-    {
-        selector: '.main',
-        dom: '#value-bg-image',
-        property: 'background',
-        getter: function () {
-            return $(this.dom)[0].image;
-        }
-    },
-    {
-        dom: '#value-lines-colour',
-        selector: '.tools-section, #synopsis li',
-        property: 'border-left-color'
-    },
-    {
-        dom: '#value-lines-colour',
-        selector: '#synopsis li',
-        property: 'border-right-color'
-    },
-    {
-        dom: '#value-font-size',
-        selector: '#synopsis p',
-        property: 'font-size',
-        getter: function () {
-            return $(this.dom).val() + "px";
-        }
-    }
-];
-
 function getValues() {
 
 }
