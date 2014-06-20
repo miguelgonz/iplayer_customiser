@@ -46,9 +46,14 @@ function getStyles() {
         if (typeof style.getter === 'function') {
             value = style.getter();
         } else {
-            value = $(style.dom).val();
+            value = $(style.getter).val();
         }
-        styles[style.selector] = style.property + ': ' + value;
+        css = '';
+        var properties = style.property.split("|");
+        for (i in properties) {
+            css += properties[i] + ': ' + value + " !important; ";
+        }
+        styles[style.selector] = css;
     }
     console.log(styles);
     return styles;
